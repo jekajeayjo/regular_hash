@@ -26,18 +26,19 @@ public class Test1 {
         hm.put(']', '[');
         hm.put(')', '(');
         hm.put('}', '{');
-        Stack<HashMap> stack = new Stack();
+        Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
         String st = "[]";
 
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
+                c=st.charAt(i);
                 if (st.equals(me)) 
                 {
-                    stack.push(hm);
+                    stack.push(c);
                 }
                 else
-                    stack.pop();
+                    stack.peek();
             }
         }
 
