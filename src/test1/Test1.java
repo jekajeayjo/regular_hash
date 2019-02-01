@@ -28,21 +28,21 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "[]";
+        String st = "()(";
 
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
-                c=st.charAt(i);
-                if (st.equals(me.getValue())) 
-                {
+                c = st.charAt(i);
+                if (c==me.getValue()) {
                     stack.push(c);
-                }
-                else if (st.equals(me.getKey()))
+                    System.out.println("is push");
+                } else if (c==me.getKey()) {
+                    
                     stack.peek();
+                    System.out.println("Is peek");
+                }
             }
         }
-        
         System.out.println(stack.isEmpty());
-
     }
 }
