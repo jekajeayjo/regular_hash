@@ -39,7 +39,7 @@ public class Test1 {
                 } else if (c==me.getKey()) {
                     
                     stack.pop();
-                    System.out.println("Is peek");
+                    System.out.println("Is pop");
                 }
             }
         }
