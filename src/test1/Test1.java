@@ -28,7 +28,7 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "()(";
+        String st = "()";
 
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
@@ -38,7 +38,7 @@ public class Test1 {
                     System.out.println("is push");
                 } else if (c==me.getKey()) {
                     
-                    stack.peek();
+                    stack.pop();
                     System.out.println("Is peek");
                 }
             }
