@@ -33,14 +33,16 @@ public class Test1 {
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
                 c=st.charAt(i);
-                if (st.equals(me)) 
+                if (st.equals(me.getValue())) 
                 {
                     stack.push(c);
                 }
-                else
+                else if (st.equals(me.getKey()))
                     stack.peek();
             }
         }
+        
+        System.out.println(stack.isEmpty());
 
     }
 }
