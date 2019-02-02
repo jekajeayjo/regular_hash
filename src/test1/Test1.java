@@ -22,33 +22,32 @@ public class Test1 {
     public static void main(String[] args) {
         // TODO code application logic here 
         char elementOfOpenParent;
-        char elementOfCloseParent= 0;
+        char elementOfCloseParent = 0;
         HashMap<Character, Character> hm = new HashMap<Character, Character>();
         hm.put(']', '[');
         hm.put(')', '(');
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "{}({)}";
+        String st = "{([])}{}";
         elementOfOpenParent = st.charAt(0);
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
                 if (st.charAt(i) == me.getValue()) {
                     stack.push(st.charAt(i));
-                    System.out.println("is push "+st.charAt(i));
-                    elementOfOpenParent=st.charAt(i);
+                    System.out.println("is push " + st.charAt(i));
+                    elementOfOpenParent = st.charAt(i);
                     System.out.println(elementOfOpenParent);
-                } else if (st.charAt(i) == me.getKey() ) {
-                    if ( elementOfOpenParent == me.getValue())
-                    {
-                    stack.pop();
-                    System.out.println("Is pop");
+                } else if (st.charAt(i) == me.getKey()) {
+                    if (stack.lastElement() == me.getValue()) {
+                        stack.pop();
+                        System.out.println("Is pop");
                     }
                 }
-                
-               // System.out.println("e"+elementOfOpenParent);
+
+                // System.out.println("e"+elementOfOpenParent);
             }
-           
+
         }
         System.out.println(stack.isEmpty());
     }
