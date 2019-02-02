@@ -31,7 +31,7 @@ public class Test1 {
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
         String st = "(){{}][]";
         elementOfOpenParent = st.charAt(0);
-        a:
+        Block_Paren:
         {
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
@@ -46,7 +46,7 @@ public class Test1 {
                         System.out.println("Is pop");
                     }
                     else
-                        break a;
+                        break Block_Paren;
                 }
             }
         }
