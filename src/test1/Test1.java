@@ -29,19 +29,19 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "(){{}][]";
-        elementOfOpenParent = st.charAt(0);
+        String inputExpression = "(){{}][]";
+        elementOfOpenParent = inputExpression.charAt(0);
         Block_Paren:
         {
-        for (int i = 0; i < st.length(); i++) {
-            for (Map.Entry<Character, Character> me : set) {
-                if (st.charAt(i) == me.getValue()) {
-                    stack.push(st.charAt(i));
-                    System.out.println("is push " + st.charAt(i));
-                    elementOfOpenParent = st.charAt(i);
+        for (int i = 0; i < inputExpression.length(); i++) {
+            for (Map.Entry<Character, Character> mapEntry : set) {
+                if (inputExpression.charAt(i) == mapEntry.getValue()) {
+                    stack.push(inputExpression.charAt(i));
+                    System.out.println("is push " + inputExpression.charAt(i));
+                    elementOfOpenParent = inputExpression.charAt(i);
                     System.out.println(elementOfOpenParent);
-                } else if (st.charAt(i) == me.getKey()) {
-                    if (stack.lastElement() == me.getValue()) {
+                } else if (inputExpression.charAt(i) == mapEntry.getKey()) {
+                    if (stack.lastElement() == mapEntry.getValue()) {
                         stack.pop();
                         System.out.println("Is pop");
                     }
