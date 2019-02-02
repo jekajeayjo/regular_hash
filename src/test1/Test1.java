@@ -29,24 +29,21 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "(){]()";
+        String st = "()";
         elementOfOpenParen = st.charAt(0);
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
                 if (st.charAt(i) == me.getValue()) {
                     stack.push(elementOfOpenParen);
                     System.out.println("is push "+elementOfOpenParen);
-                    elementOfCloseParen=me.getKey();
                 } else if (st.charAt(i) == me.getKey() && elementOfOpenParen == me.getValue()) {
 
                     stack.pop();
                     System.out.println("Is pop "+elementOfOpenParen+" "+me.getKey());
                 }
                 elementOfOpenParen = st.charAt(i);
-                
             }
-            if (elementOfCloseParen ==elementOfOpenParen) {
-                System.out.println(elementOfCloseParen+"!"+elementOfOpenParen);
+            if (elementOfCloseParen == 'q') {
                 break;
             }
         }
