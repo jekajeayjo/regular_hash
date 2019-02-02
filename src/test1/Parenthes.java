@@ -30,9 +30,7 @@ public class Parenthes {
         hm.put(')', '(');
         hm.put('}', '{');
         elementOfOpenParent = inputExpression.charAt(0);
-       stringCheck(inputExpression);
-
-        
+        stringCheck(inputExpression);
     }
 
     void stringCheck(String inputExpression) {
