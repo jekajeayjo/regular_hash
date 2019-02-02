@@ -14,7 +14,7 @@ import java.util.Stack;
  *
  * @author User
  */
-public class Parenthes {
+public class Brackets {
 
     //private String inputExpression;
     private char openBracket;
@@ -24,7 +24,7 @@ public class Parenthes {
     private Set<Map.Entry<Character, Character>> set = hm.entrySet();
     // String inputExpression = "(){{}][]";
 
-    Parenthes(String inputExpression) 
+    Brackets(String inputExpression) 
     {
         hm.put(']', '[');
         hm.put(')', '(');
