@@ -29,8 +29,10 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "{([])}{}";
+        String st = "(){{}][]";
         elementOfOpenParent = st.charAt(0);
+        a:
+        {
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
                 if (st.charAt(i) == me.getValue()) {
@@ -43,11 +45,11 @@ public class Test1 {
                         stack.pop();
                         System.out.println("Is pop");
                     }
+                    else
+                        break a;
                 }
-
-                // System.out.println("e"+elementOfOpenParent);
             }
-
+        }
         }
         System.out.println(stack.isEmpty());
     }
