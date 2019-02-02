@@ -21,7 +21,8 @@ public class Test1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here 
-        char c;
+        char elementOfOpenParen;
+        char elementOfCloseParen = 0;
         HashMap<Character, Character> hm = new HashMap<Character, Character>();
         hm.put(']', '[');
         hm.put(')', '(');
@@ -29,18 +30,22 @@ public class Test1 {
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
         String st = "()";
-
         for (int i = 0; i < st.length(); i++) {
+            elementOfOpenParen = st.charAt(0);
             for (Map.Entry<Character, Character> me : set) {
-                c = st.charAt(i);
-                if (c==me.getValue()) {
-                    stack.push(c);
+                if (st.charAt(i) == me.getValue()) {
+                    stack.push(elementOfCloseParen);
                     System.out.println("is push");
-                } else if (c==me.getKey()) {
-                    
+                } else if (st.charAt(i) == me.getKey() && elementOfCloseParen == me.getValue()) {
+                    elementOfOpenParen = me.getValue();
                     stack.pop();
                     System.out.println("Is pop");
                 }
+                elementOfOpenParen = st.charAt(i);
+            }
+            if (elementOfCloseParen != stack.lastElement()) {
+                System.out.println(elementOfCloseParen + "!" + stack.lastElement());
+                break;
             }
         }
         System.out.println(stack.isEmpty());
