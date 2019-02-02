@@ -16,7 +16,7 @@ import java.util.Stack;
  */
 public class Parenthes {
 
-    private String inputExpression;
+    //private String inputExpression;
     private char elementOfOpenParent;
     private char elementOfCloseParent = 0;
     private HashMap<Character, Character> hm = new HashMap<Character, Character>();
@@ -25,7 +25,7 @@ public class Parenthes {
     // String inputExpression = "(){{}][]";
 
     Parenthes(String inputExpression) {
-        this.inputExpression = inputExpression;
+
         hm.put(']', '[');
         hm.put(')', '(');
         hm.put('}', '{');
@@ -33,28 +33,26 @@ public class Parenthes {
         stringCheck(inputExpression);
     }
 
-    void stringCheck(String inputExpression) {
-        Block_Paren:
-        {
-            for (int i = 0; i < inputExpression.length(); i++) {
-                for (Map.Entry<Character, Character> mapEntry : set) {
-                    if (inputExpression.charAt(i) == mapEntry.getValue()) {
-                        stack.push(inputExpression.charAt(i));
-                        System.out.println("is push " + inputExpression.charAt(i));
-                        elementOfOpenParent = inputExpression.charAt(i);
-                        System.out.println(elementOfOpenParent);
-                    } else if (inputExpression.charAt(i) == mapEntry.getKey()) {
-                        if (stack.lastElement() == mapEntry.getValue()) {
-                            stack.pop();
-                            System.out.println("Is pop");
-                        } else {
-                            break Block_Paren;
-                        }
+    boolean stringCheck(String inputExpression) {
+
+        for (int i = 0; i < inputExpression.length(); i++) {
+            for (Map.Entry<Character, Character> mapEntry : set) {
+                if (inputExpression.charAt(i) == mapEntry.getValue()) {
+                    stack.push(inputExpression.charAt(i));
+                    elementOfOpenParent = inputExpression.charAt(i);
+                } else if (inputExpression.charAt(i) == mapEntry.getKey()) {
+                    if (stack.lastElement() == mapEntry.getValue()) {
+                        stack.pop();
+                    } else {
+                        System.out.println("Не верно");
+                        return false;
                     }
                 }
             }
         }
-        System.out.println(stack.isEmpty());
+        System.out.println("Верно");
+        return true;
+
     }
 
 }
