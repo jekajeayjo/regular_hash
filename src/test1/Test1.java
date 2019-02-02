@@ -29,7 +29,7 @@ public class Test1 {
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "()()()()";
+        String st = "{}({)}";
         elementOfOpenParent = st.charAt(0);
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
@@ -39,10 +39,14 @@ public class Test1 {
                     elementOfOpenParent=st.charAt(i);
                     System.out.println(elementOfOpenParent);
                 } else if (st.charAt(i) == me.getKey() ) {
+                    if ( elementOfOpenParent == me.getValue())
+                    {
                     stack.pop();
                     System.out.println("Is pop");
+                    }
                 }
-                elementOfOpenParent = st.charAt(i);
+                
+               // System.out.println("e"+elementOfOpenParent);
             }
            
         }
