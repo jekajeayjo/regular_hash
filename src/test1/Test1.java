@@ -21,31 +21,29 @@ public class Test1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here 
-        char elementOfOpenParen;
-        char elementOfCloseParen = 0;
+        char elementOfOpenParent;
+        char elementOfCloseParent= 0;
         HashMap<Character, Character> hm = new HashMap<Character, Character>();
         hm.put(']', '[');
         hm.put(')', '(');
         hm.put('}', '{');
         Stack<Character> stack = new Stack();
         Set<Map.Entry<Character, Character>> set = hm.entrySet();
-        String st = "()";
-        elementOfOpenParen = st.charAt(0);
+        String st = "{}";
+        elementOfOpenParent = st.charAt(0);
         for (int i = 0; i < st.length(); i++) {
             for (Map.Entry<Character, Character> me : set) {
                 if (st.charAt(i) == me.getValue()) {
-                    stack.push(elementOfOpenParen);
-                    System.out.println("is push "+elementOfOpenParen);
-                } else if (st.charAt(i) == me.getKey() && elementOfOpenParen == me.getValue()) {
-
+                    stack.push(st.charAt(i));
+                    System.out.println("is push "+st.charAt(i));
+                    System.out.println(elementOfOpenParent);
+                } else if (st.charAt(i) == me.getKey() && elementOfOpenParent == me.getValue()) {
                     stack.pop();
-                    System.out.println("Is pop "+elementOfOpenParen+" "+me.getKey());
+                    System.out.println("Is pop");
                 }
-                elementOfOpenParen = st.charAt(i);
+                elementOfOpenParent = st.charAt(i);
             }
-            if (elementOfCloseParen == 'q') {
-                break;
-            }
+           
         }
         System.out.println(stack.isEmpty());
     }
