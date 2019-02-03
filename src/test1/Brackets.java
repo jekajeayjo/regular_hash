@@ -12,7 +12,11 @@ import java.util.Stack;
 
 /**
  *
- * @author User
+ * @author Baldji Eughen
+ * @version 1.3
+ * since 1.0
+ * This class Brackets which add input  open bracket in array and check with close bracket 
+ *the class contains hashmap in which there is open bracket and close bracke for check input values
  */
 public class Brackets {
 
@@ -23,7 +27,10 @@ public class Brackets {
     private Stack<Character> stack = new Stack();
     private Set<Map.Entry<Character, Character>> set = hm.entrySet();
     // String inputExpression = "(){{}][]";
-
+/**
+ *  hashMap add open and close bracket which will be check from input values  using the  Constructor 
+ * @param inputExpression  the field will be to use for input values which will be to check
+ */
     Brackets(String inputExpression) 
     {
         hm.put(']', '[');
@@ -32,7 +39,11 @@ public class Brackets {
         openBracket = inputExpression.charAt(0);
         stringCheck(inputExpression);
     }
-
+/**
+ * <strong>stringCheck</strong> the method checks brackets in array on the right amount
+ * @param inputExpression
+ * @return true or false in boolean type 
+ */
     boolean stringCheck(String inputExpression) 
     {
 
@@ -58,8 +69,15 @@ public class Brackets {
                 }
             }
         }
+        if (!stack.isEmpty())
+        {
+            System.out.println("Не верно");
+            return false;
+        }           
+        else{
         System.out.println("Верно");
         return true;
+        }
 
     }
 

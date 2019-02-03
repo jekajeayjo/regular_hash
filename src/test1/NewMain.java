@@ -17,7 +17,10 @@ public class NewMain {
     public static void main(String[] args) 
     {
         // TODO code application logic here
-        Brackets par = new Brackets("([(])(){}");
+        String inputExpression="{{()}}";
+        Brackets par = new Brackets(inputExpression);
+       // boolean n=par.stringCheck(inputExpression);
+       // System.out.println(par);
     }
 
 }
