@@ -34,45 +34,42 @@ public class testWrongExpressions {
      */
     @Test
     public void testStringCheck1() {
-        System.out.println("stringCheck");
+        System.out.println("stringCheck1");
         String inputExpression="{{";
         
         Brackets instance = new Brackets(inputExpression);
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+  
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+      
     }
      @Test
     public void testStringCheck2() {
-        System.out.println("stringCheck");
+        System.out.println("stringCheck2");
         String inputExpression="{{)";
         
         Brackets instance = new Brackets(inputExpression);
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+  
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+       
     }
      @Test
     public void testStringCheck3() {
-        System.out.println("stringCheck");
+        System.out.println("stringCheck3");
         String inputExpression="{{[(]}}";
         
         Brackets instance = new Brackets(inputExpression);
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+     
     }
     
 }

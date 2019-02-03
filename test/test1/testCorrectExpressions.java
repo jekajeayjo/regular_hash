@@ -36,10 +36,9 @@ public class testCorrectExpressions {
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+   
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        
     }
     @Test
     public void testStringCheck2() {
@@ -50,10 +49,9 @@ public class testCorrectExpressions {
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+    
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+        
     }
         public void testStringCheck3() {
         System.out.println("stringCheck3");
@@ -63,10 +61,9 @@ public class testCorrectExpressions {
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
-    // assertSame(expResult,result);
+   
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-       // fail("The test case is a prototype.");
+       
     }
     
 }

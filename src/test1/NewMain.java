@@ -19,8 +19,7 @@ public class NewMain {
         // TODO code application logic here
         String inputExpression="{{()}}";
         Brackets par = new Brackets(inputExpression);
-       // boolean n=par.stringCheck(inputExpression);
-       // System.out.println(par);
+    
     }
 
 }
