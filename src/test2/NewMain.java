@@ -18,10 +18,17 @@ public class NewMain {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        String t="НачПериода";
+        String answer="";
         String period ="НачПериода1,НачПериода2,КонПериода1,КонПериода2,НачПериода3";
         Intersection  b =new Intersection();
-        b.findAll(period);
+        answer=b.findAll(period);
+        System.out.println(answer);
+        period="";
+        answer=b.findAll(period);
+        System.out.println(answer);
+        period ="НачПериода1,НачПериода2,КонПериода1, КонПериода2";
+         answer=b.findAll(period);
+        System.out.println(answer);
       
         
     }

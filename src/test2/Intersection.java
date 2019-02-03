@@ -28,14 +28,46 @@ public class Intersection {
         String checkInfinity = null;
         for (String list : input.split(",")) {
             periodList.add(list);
-            System.out.println(list);
+           // System.out.println(list);
         }
         String checkInfinity1 = checkInfinity(periodList);
         if (checkInfinity1 != null) {
             System.out.println(checkInfinity1);
             return checkInfinity1;
         }
-        return "";
+        List<String> intesection=new ArrayList<>();
+        int isOpened=0;
+        int isIntersetion=0;
+        for (String period:periodList)
+        {
+        if (period.contains(BEGIN))
+        {
+        if (isOpened>0)
+        {
+        intesection.add(period);
+        isIntersetion++;
+        }
+        isOpened++;
+        }
+        else if (period.contains(END))
+        {
+        if (isIntersetion>0)
+        {
+        intesection.add(END);
+        isIntersetion--;
+        }
+        }
+        isOpened--;
+        }
+        if (intesection.isEmpty()){
+          //  System.out.println("Нет пересечения");
+        return "Нет пересечения";
+        }
+        else
+        {
+            // System.out.println(" пересечения");
+           return " есть пересечения"; 
+        }
     }
 
     private String checkInfinity(List<String> periodList) {
