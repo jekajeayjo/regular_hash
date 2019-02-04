@@ -30,12 +30,12 @@ public class IntersectionTest {
     @Test
     public void testFindAll() {
         System.out.println("findAll");
-        String input = "";
+        String input = "НачПериода1,НачПериода2,КонПериода1,КонПериода2,НачПериода3";
         Intersection instance = new Intersection();
-        String expResult = "";
+        String expResult = "+бесконечность";
         String result = instance.findAll(input);
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
     
 }

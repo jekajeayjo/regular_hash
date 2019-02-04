@@ -31,12 +31,21 @@ public class Intersection {
             // System.out.println(list);
         }
         String checkInfinity1 = checkInfinity(periodList);
+        String checkIntersection1=checkIntersection(periodList);
         if (checkInfinity1 != null) {
-            System.out.println(checkInfinity1);
+           // System.out.println(checkInfinity1);
             return checkInfinity1;
         }
+        else 
+        {
+        return checkIntersection1;
+        }
+       
+    }
+    private String checkIntersection(List<String> periodList)
+    {
         List<String> intesection = new ArrayList<>();
-        int isOpened = 0;
+     int isOpened = 0;
         int isIntersetion = 0;
         for (String period : periodList) {
             if (period.contains(BEGIN)) {
@@ -59,7 +68,7 @@ public class Intersection {
             return "Нет пересечения";
         } else {
 String result=String.join(", ",intesection );
-            return " есть пересечения: "+result;
+            return "Есть пересечения: "+result;
         }
     }
 

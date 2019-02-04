@@ -26,7 +26,7 @@ public class NewMain {
         period="";
         answer=b.findAll(period);
         System.out.println(answer);
-        period ="НачПериода1,НачПериода2,КонПериода1, КонПериода2";
+        period ="НачПериода1,НачПериода2,КонПериода1,КонПериода2";
          answer=b.findAll(period);
         System.out.println(answer);
       

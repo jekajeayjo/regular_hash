@@ -18,7 +18,8 @@ public class NewMain {
     {
         // TODO code application logic here
         String inputExpression="{{()}}";
-        Brackets par = new Brackets(inputExpression);
+        Brackets par = new Brackets();
+        par.stringCheck(inputExpression);
     
     }
 

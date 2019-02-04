@@ -37,7 +37,7 @@ public class testWrongExpressions {
         System.out.println("testWrongExpressions1");
         String inputExpression="{{";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
@@ -50,7 +50,7 @@ public class testWrongExpressions {
         System.out.println("testWrongExpressions2");
         String inputExpression="{{)";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
@@ -63,7 +63,7 @@ public class testWrongExpressions {
         System.out.println("testWrongExpressions3");
         String inputExpression="{{[(]}}";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = false;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
@@ -76,7 +76,7 @@ public class testWrongExpressions {
         System.out.println("testCorrectExpressions1");
         String inputExpression="{{}}";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
@@ -89,7 +89,7 @@ public class testWrongExpressions {
         System.out.println("testCorrectExpressions2");
         String inputExpression="{{(2+1)[]}}";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);
@@ -101,7 +101,7 @@ public class testWrongExpressions {
         System.out.println("testCorrectExpressions3");
         String inputExpression="()()(){}{}[({})]";
         
-        Brackets instance = new Brackets(inputExpression);
+        Brackets instance = new Brackets();
         boolean expResult = true;
         boolean result = instance.stringCheck(inputExpression);
         System.out.println(result);

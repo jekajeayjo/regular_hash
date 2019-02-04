@@ -31,13 +31,13 @@ public class Brackets {
  *  hashMap add open and close bracket which will be check from input values  using the  Constructor 
  * @param inputExpression  the field will be to use for input values which will be to check
  */
-    Brackets(String inputExpression) 
+    Brackets() 
     {
         hm.put(']', '[');
         hm.put(')', '(');
         hm.put('}', '{');
-        openBracket = inputExpression.charAt(0);
-        stringCheck(inputExpression);
+      
+       // stringCheck(inputExpression);
     }
 /**
  * <strong>stringCheck</strong> the method checks brackets in array on the right amount
@@ -46,6 +46,7 @@ public class Brackets {
  */
     boolean stringCheck(String inputExpression) 
     {
+          openBracket = inputExpression.charAt(0);
 
         for (int i = 0; i < inputExpression.length(); i++) 
         {
