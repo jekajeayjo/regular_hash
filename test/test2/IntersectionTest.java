@@ -35,7 +35,7 @@ public class IntersectionTest {
         String expResult = "+бесконечность";
         String result = instance.findAll(input);
         assertEquals(expResult, result);
-       // fail("The test case is a prototype.");
+       //fail("The test case is a prototype.");
     }
     
 }

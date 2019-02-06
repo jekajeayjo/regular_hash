@@ -25,50 +25,53 @@ public class Intersection {
 
     public String findAll(String input) {
         periodList = new ArrayList<>();
+        if (input == "") {
+            return "Входных периодов нет";
+        }
         String checkInfinity = null;
         for (String list : input.split(",")) {
             periodList.add(list);
             // System.out.println(list);
         }
+        
         String checkInfinity1 = checkInfinity(periodList);
-        String checkIntersection1=checkIntersection(periodList);
+        String checkIntersection1 = checkIntersection(periodList);
         if (checkInfinity1 != null) {
-           // System.out.println(checkInfinity1);
+            // System.out.println(checkInfinity1);
             return checkInfinity1;
+        } else {
+            return checkIntersection1;
         }
-        else 
-        {
-        return checkIntersection1;
-        }
-       
+
     }
-    private String checkIntersection(List<String> periodList)
-    {
-        List<String> intesection = new ArrayList<>();
-     int isOpened = 0;
+
+    private String checkIntersection(List<String> periodList) {
+        List<String> intersection = new ArrayList<>();
+
+        int isOpened = 0;
         int isIntersetion = 0;
         for (String period : periodList) {
             if (period.contains(BEGIN)) {
                 if (isOpened > 0) {
-                    intesection.add(period);
+                    intersection.add(period);
                     isIntersetion++;
                 }
                 isOpened++;
             } else if (period.contains(END)) {
                 if (isIntersetion > 0) {
-                    intesection.add(END);
+                    intersection.add(period);
                     isIntersetion--;
                 }
                 isOpened--;
             }
-            
+
         }
-        if (intesection.isEmpty()) {
+        if (intersection.isEmpty()) {
 
             return "Нет пересечения";
         } else {
-String result=String.join(", ",intesection );
-            return "Есть пересечения: "+result;
+            String result = String.join(", ", intersection);
+            return "Есть пересечения: " + result;
         }
     }
 
