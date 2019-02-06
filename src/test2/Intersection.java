@@ -106,6 +106,8 @@ public class Intersection {
         else if (BeginEnd==0) {
             isInfinity = "- +бесконечность";
         }
+        else if (BeginEnd<beginCount&&BeginEnd<endCount&&BeginEnd==endCount)
+               isInfinity = "- +бесконечность";
         return isInfinity;
     }
 }
