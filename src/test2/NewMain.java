@@ -30,7 +30,9 @@ public class NewMain {
          answer=b.findAll(period);
         System.out.println(answer);
       
-        
+      period ="НачПериода1,КонПериода2";
+        answer=b.findAll(period);
+        System.out.println(answer);
     }
     
 }

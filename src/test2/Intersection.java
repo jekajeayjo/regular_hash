@@ -28,19 +28,19 @@ public class Intersection {
         if (input == "") {
             return "Входных периодов нет";
         }
-        String checkInfinity = null;
+       // String checkInfinity = null;
         for (String list : input.split(",")) {
             periodList.add(list);
             // System.out.println(list);
         }
         
-        String checkInfinity1 = checkInfinity(periodList);
-        String checkIntersection1 = checkIntersection(periodList);
-        if (checkInfinity1 != null) {
+        String checkInfinity = checkInfinity(periodList);
+        String checkIntersection = checkIntersection(periodList);
+        if (checkInfinity != null) {
             // System.out.println(checkInfinity1);
-            return checkInfinity1;
+            return checkInfinity;
         } else {
-            return checkIntersection1;
+            return checkIntersection;
         }
 
     }
@@ -79,19 +79,32 @@ public class Intersection {
         long beginCount = 0;
         long endCount = 0;
         String isInfinity = null;
+        int BeginEnd=0;
         //HashMap<Boolean,Long>groupedBeginEndMap=new HashMap<>();
         for (String list : periodList) {
             if (list.contains(BEGIN)) {
+                int found=0;
+                String foundNum=list.substring(10);
+                for (String number :periodList)
+                {
+                if (number.contains(END)&&number.contains(foundNum))
+                    BeginEnd++;
+                }
+                
                 beginCount++;
             } else if (list.contains(END)) {
                 endCount++;
             }
             // System.out.println(beginCount+"-"+endCount);
         }
+        //System.out.println(BeginEnd+"BeginEnd");
         if (beginCount > endCount) {
             isInfinity = "+бесконечность";
         } else if (beginCount < endCount) {
             isInfinity = "-бесконечность";
+        }
+        else if (BeginEnd==0) {
+            isInfinity = "- +бесконечность";
         }
         return isInfinity;
     }
