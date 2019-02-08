@@ -22,22 +22,22 @@ public class Intersection {
     private static final String BEGIN = "НачПериода";
     private static final String END = "КонПериода";
     ArrayList<String> periodList;
-
+int countPeriod=0;
     public String findAll(String input) {
         periodList = new ArrayList<>();
         if (input == "") {
             return "Входных периодов нет";
         }
-       // String checkInfinity = null;
+     
         for (String list : input.split(",")) {
             periodList.add(list);
-            // System.out.println(list);
+         
         }
         
         String checkInfinity = checkInfinity(periodList);
         String checkIntersection = checkIntersection(periodList);
         if (checkInfinity != null) {
-            // System.out.println(checkInfinity1);
+   
             return checkInfinity;
         } else {
             return checkIntersection;
@@ -51,12 +51,15 @@ public class Intersection {
         int isOpened = 0;
         int isIntersetion = 0;
         for (String period : periodList) {
+            
             if (period.contains(BEGIN)) {
+               
                 if (isOpened > 0) {
                     intersection.add(period);
-                    isIntersetion++;
+                    isIntersetion++; countPeriod++;
                 }
                 isOpened++;
+                
             } else if (period.contains(END)) {
                 if (isIntersetion > 0) {
                     intersection.add(period);
@@ -68,7 +71,7 @@ public class Intersection {
         }
         if (intersection.isEmpty()) {
 
-            return "Нет пересечения";
+            return "Нет пересечения, количество периодов: "+countPeriod;
         } else {
             String result = String.join(", ", intersection);
             return "Есть пересечения: " + result;
@@ -107,7 +110,7 @@ public class Intersection {
             isInfinity = "- +бесконечность";
         }
         else if (BeginEnd<beginCount&&BeginEnd<endCount&&BeginEnd==endCount)
-               isInfinity = "- +бесконечность";
+               isInfinity = "- + бесконечность";
         return isInfinity;
     }
 }

@@ -33,6 +33,9 @@ public class NewMain {
       period ="НачПериода1,КонПериода2";
         answer=b.findAll(period);
         System.out.println(answer);
+        period ="НачПериода1,КонПериода1,,НачПериода2,КонПериода2";
+         answer=b.findAll(period);
+        System.out.println(answer);
     }
     
 }
