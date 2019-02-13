@@ -28,14 +28,44 @@ public class IntersectionTest {
     }
 
     @Test
-    public void testFindAll() {
-        System.out.println("findAll");
+    public void testinfini() {
+        System.out.println("infinity +");
         String input = "НачПериода1,НачПериода2,КонПериода1,КонПериода2,НачПериода3";
         Intersection instance = new Intersection();
         String expResult = "+бесконечность";
         String result = instance.findAll(input);
         assertEquals(expResult, result);
        //fail("The test case is a prototype.");
+    }    @Test
+     public void testinfini1() {
+        System.out.println("infinity -");
+        String input = "НачПериода1,НачПериода2,КонПериода1,КонПериода2,КонПериода3";
+        Intersection instance = new Intersection();
+        String expResult = "-бесконечность";
+        String result = instance.findAll(input);
+        assertEquals(expResult, result);
+       //fail("The test case is a prototype.");
+    }    @Test
+      public void test2() {
+        System.out.println("no intersection");
+        String input = "НачПериода1,КонПериода1,НачПериода2,КонПериода2";
+        Intersection instance = new Intersection();
+        String expResult = "Нет пересечения, количество периодов:2";
+        String result = instance.findAll(input);
+        assertEquals(expResult, result);
+       
+    }    @Test
+       public void test3() {
+        System.out.println(" intersection");
+        String input = "НачПериода1,НачПериода2,КонПериода1,КонПериода2";
+        Intersection instance = new Intersection();
+        String expResult = "Есть пересечения: НачПериода2, КонПериода1";
+        String result = instance.findAll(input);
+        assertEquals(expResult, result);
+       
     }
+      
+      
+     
     
 }

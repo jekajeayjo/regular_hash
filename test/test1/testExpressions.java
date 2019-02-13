@@ -12,9 +12,9 @@ import static org.junit.Assert.*;
  *
  * @author User
  */
-public class testWrongExpressions {
+public class testExpressions {
     
-    public testWrongExpressions() {
+    public testExpressions() {
     }
     
    

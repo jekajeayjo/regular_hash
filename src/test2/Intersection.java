@@ -23,6 +23,7 @@ public class Intersection {
     private static final String END = "КонПериода";
     ArrayList<String> periodList;
 int countPeriod=0;
+
     public String findAll(String input) {
         periodList = new ArrayList<>();
         if (input == "") {
@@ -71,7 +72,7 @@ int countPeriod=0;
         }
         if (intersection.isEmpty()) {
 
-            return "Нет пересечения, количество периодов: "+countPeriod;
+            return  "Нет пересечения, количество периодов:"+countPeriod;
         } else {
             String result = String.join(", ", intersection);
             return "Есть пересечения: " + result;
